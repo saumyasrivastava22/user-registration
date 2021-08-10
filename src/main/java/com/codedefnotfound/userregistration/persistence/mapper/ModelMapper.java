@@ -4,8 +4,6 @@ import com.codedefnotfound.userregistration.model.UserProfile;
 import com.codedefnotfound.userregistration.persistence.entity.Profile;
 import org.springframework.stereotype.Component;
 
-import java.time.ZonedDateTime;
-
 @Component
 public class ModelMapper {
 

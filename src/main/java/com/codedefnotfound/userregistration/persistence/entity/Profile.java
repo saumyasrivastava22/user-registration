@@ -11,6 +11,8 @@ import org.springframework.data.annotation.LastModifiedDate;
 import org.springframework.data.relational.core.mapping.Column;
 import org.springframework.data.relational.core.mapping.Table;
 
+import java.sql.Timestamp;
+
 @Data
 @NoArgsConstructor
 @AllArgsConstructor
@@ -36,10 +38,10 @@ public class Profile {
     /* for internal use only */
     @CreatedDate
     @Column("CREATED_AT")
-    private String createdAt;
+    private Timestamp createdAt;
     @LastModifiedDate
     @Column("LAST_MODIFIED_AT")
-    private String lastModifiedAt;
+    private Timestamp lastModifiedAt;
     @Column("STATE")
     private State state;
 }

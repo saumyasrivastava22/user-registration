@@ -1,5 +1,6 @@
 package com.codedefnotfound.userregistration.service;
 
+import com.codedefnotfound.userregistration.model.State;
 import com.codedefnotfound.userregistration.model.UserProfile;
 import com.codedefnotfound.userregistration.persistence.entity.Profile;
 import com.codedefnotfound.userregistration.persistence.mapper.ModelMapper;

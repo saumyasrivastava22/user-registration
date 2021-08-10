@@ -25,11 +25,17 @@ What this microservice template covers:
 
     ... where user-mgmt-mysql is the name you want to assign to your container, password is the password to be set for the MySQL root user and tag is the tag specifying the MySQL version you want. [See the list above for relevant tags](https://hub.docker.com/_/mysql).
 
-### Setting up user-registration microservice in a docker container [Youtube](https://www.youtube.com/watch?v=fvEWoy1xOvo)
+### Setting up user-registration microservice in a docker container ([Reference](https://www.youtube.com/watch?v=fvEWoy1xOvo))
+
   * Build docker image using Dockerfile in root location of project 
     > docker build . -t user-registration-0.0.1-snapshot
   * Run the docker image in a new container, expose server port using '9876:9876', link it to mysql-server container using image 'user-registration-0.0.1-snapshot'                                                                       
     > docker run -p 9876:9876 --name user-registration --link users-mysql-server:mysql -d user-registration-0.0.1-snapshot
+  * Loading setup.sql & test-data.sql 
+    > docker exec -it users-mysql-server /bin/bash
+    bash# mysql -uroot -p -A
+    Enter password: xxxx
+    mysql> select ...
 
 ## Useful commands
   * Docker commands
