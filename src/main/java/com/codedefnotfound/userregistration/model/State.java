@@ -1,6 +1,7 @@
 package com.codedefnotfound.userregistration.model;
 
 public enum State {
+    ACTIVE,
     INACTIVE,
-    ACTIVE
+    RESERVED;
 }
