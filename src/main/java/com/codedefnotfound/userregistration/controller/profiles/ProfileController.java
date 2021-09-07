@@ -1,7 +1,7 @@
-package com.codedefnotfound.userregistration.controller;
+package com.codedefnotfound.userregistration.controller.profiles;
 
-import com.codedefnotfound.userregistration.exception.NotFoundException;
-import com.codedefnotfound.userregistration.model.UserProfile;
+import com.codedefnotfound.userregistration.exception.UsernameAlreadyExistsException;
+import com.codedefnotfound.userregistration.model.Profile;
 import com.codedefnotfound.userregistration.service.ProfileService;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.http.HttpStatus;
@@ -18,19 +18,19 @@ public class ProfileController {
 
     @PostMapping
     @ResponseStatus(HttpStatus.CREATED)
-    public Mono<UserProfile> createProfile(@RequestBody UserProfile userProfile) {
-        return service.createProfile(userProfile);
+    public Mono<Profile> createProfile(@RequestBody Profile profile) {
+        return service.createProfile(profile);
     }
 
     @DeleteMapping("/{username}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<ResponseEntity<UserProfile>> deleteProfile(@PathVariable("username") String username) {
+    public Mono<ResponseEntity<Profile>> deleteProfile(@PathVariable("username") String username) {
         return service.deleteProfile(username).map(ResponseEntity::ok).defaultIfEmpty(ResponseEntity.notFound().build());
     }
 
     @GetMapping("/{username}")
     @ResponseStatus(HttpStatus.OK)
-    public Mono<ResponseEntity<UserProfile>> getProfile(@PathVariable("username") String username) throws NotFoundException {
+    public Mono<ResponseEntity<Profile>> getProfile(@PathVariable("username") String username) throws UsernameAlreadyExistsException {
         return service.getProfile(username).map(ResponseEntity::ok).defaultIfEmpty(ResponseEntity.notFound().build());
     }
 }

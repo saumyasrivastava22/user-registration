@@ -10,7 +10,7 @@ import lombok.*;
 @EqualsAndHashCode
 @ToString
 @JsonInclude(JsonInclude.Include.NON_EMPTY)
-public class UserProfile {
+public class Profile {
     private @NonNull String username;
     private @NonNull String firstName;
     private String lastName;

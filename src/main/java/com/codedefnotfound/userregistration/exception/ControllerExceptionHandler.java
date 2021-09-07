@@ -9,7 +9,7 @@ import org.springframework.web.bind.annotation.RestControllerAdvice;
 public class ControllerExceptionHandler {
 
     @ExceptionHandler
-    public ResponseEntity<String> handleNotFoundException(NotFoundException exception) {
+    public ResponseEntity<String> handleNotFoundException(UsernameAlreadyExistsException exception) {
         return new ResponseEntity<>(exception.getMessage(), HttpStatus.NOT_FOUND);
     }
 }

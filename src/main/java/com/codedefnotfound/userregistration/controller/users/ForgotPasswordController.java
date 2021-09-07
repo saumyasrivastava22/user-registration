@@ -1,4 +1,4 @@
-package com.codedefnotfound.userregistration.controller;
+package com.codedefnotfound.userregistration.controller.users;
 
 import com.codedefnotfound.userregistration.model.Password;
 import org.springframework.web.bind.annotation.PostMapping;
@@ -7,7 +7,7 @@ import org.springframework.web.bind.annotation.RequestMapping;
 import org.springframework.web.bind.annotation.RestController;
 
 @RestController
-@RequestMapping("/profiles/{profileId}/forgot-password")
+@RequestMapping("/profiles/{username}/forgotPassword")
 public class ForgotPasswordController {
 
     @PostMapping
